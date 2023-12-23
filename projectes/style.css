@@ -93,11 +93,3 @@ p{
   display: flex;
   justify-content: center;
 }
-
-@media only screen and (max-width: 767px) {
-  body {
-      /* Блокировать переворот в альбомный режим */
-      max-width: 100vw;
-      overflow-x: hidden;
-  }
-}

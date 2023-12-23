@@ -75,22 +75,7 @@ const list = [
     ]
 ]
 
-// Проверить, поддерживается ли устройство блокировка ориентации
-if (screen.orientation && screen.orientation.lock) {
-    // Блокировать переворот экрана в альбомный режим
-    window.addEventListener("orientationchange", function () {
-        if (window.orientation !== 0) {
-            // Если устройство в альбомном режиме, перевести обратно в портретный
-            window.orientation === 90 ? screen.orientation.lock("portrait-primary") : screen.orientation.lock("portrait-secondary");
-        }
-    });
-
-    // Вызовите это событие, чтобы установить начальное положение
-    window.dispatchEvent(new Event("orientationchange"));
-} else {
-    console.warn("Блокировка ориентации не поддерживается на этом устройстве.");
-}
-
+screen.orientation.lock("portrait");
 
 $(function (){
     $(window).bind("resize", rerender);
